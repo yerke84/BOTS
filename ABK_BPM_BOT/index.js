@@ -9,13 +9,20 @@ var bot = new TelegramBot(TOKEN, {polling: true, polling: {params: {timeout : 30
 
 // Основное меню
 bot.onText(/\/menu/, function (msg, match) {
-  bot.sendMessage(getChatId(msg), config.get('hello') + ', ' + msg.from.first_name + ', ' +
-  config.get('main_menu_txt'), getMenu(config.get('main_menu_buttons')));
+  bot.sendMessage(
+    getChatId(msg),
+    config.get('hello') + ', ' + msg.from.first_name + ', ' + config.get('main_menu_txt'),
+    getMenu(config.get('main_menu_buttons'))
+  );
 });
 
 // Помощь
 bot.onText(/\/help/, function (msg, match) {
-  bot.sendMessage(getChatId(msg), config.get('developing'), getMenu(config.get('alfa_site_url_buttons')));
+  bot.sendMessage(
+    getChatId(msg),
+    config.get('developing'),
+    getMenu(config.get('alfa_site_url_buttons'))
+  );
 });
 
 // Обработка событии
@@ -25,11 +32,19 @@ bot.on('callback_query', function (msg) {
   switch (msg.data) {
     case 'to_find_process_by_instanse_id':
       removePreviousMsg(msg);
-      bot.sendMessage(chatId, config.get('main_menu_txt'), getMenu(config.get('search_menu_buttons')));
+      bot.sendMessage(
+        chatId,
+        config.get('main_menu_txt'),
+        getMenu(config.get('search_menu_buttons'))
+      );
       break;
     case 'to_main_menu':
       removePreviousMsg(msg);
-      bot.sendMessage(chatId, config.get('main_menu_txt'), getMenu(config.get('main_menu_buttons')));
+      bot.sendMessage(
+        chatId,
+        config.get('main_menu_txt'),
+        getMenu(config.get('main_menu_buttons'))
+      );
       break;
     default:
       bot.answerCallbackQuery(msg.id, 'Вы выбрали: ' + msg.data, false);
