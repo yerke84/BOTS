@@ -7,6 +7,30 @@ var TelegramBot = require('node-telegram-bot-api');
 // Включить опрос сервера
 var bot = new TelegramBot(TOKEN, {polling: true, polling: {params: {timeout : 300}}});
 
+// Начать
+bot.onText(/\/start/, function (msg, match) {
+  bot.sendMessage(getChatId(msg), config.get('hello') + ', ' + msg.from.first_name + '!');
+});
+
+
+// bot.on('message', (msg) => {
+//   bot.sendMessage(getChatId(msg), 'Other : ' + JSON.stringify(msg));
+// });
+
+// функции
+// function removePreviousMsg(chatId, message_id) {
+//   try {
+//     bot.deleteMessage(chatId, message_id);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
+
+function getChatId(msg) {
+  return msg.hasOwnProperty('chat') ? msg.chat.id : msg.from.id;
+}
+/*
+
 // Основное меню
 bot.onText(/\/menu/, function (msg, match) {
   bot.sendMessage(
@@ -56,13 +80,7 @@ bot.on('chosen_inline_result', function (msg) {
   console.log(msg);
 });
 
-// функции
-function removePreviousMsg(msg) {
-  try {
-    bot.deleteMessage(msg.message.chat.id, msg.message.message_id);
-  } catch (e) {
-  }
-}
+
 
 function getMenu(arr_buttons) {
   return options = {
@@ -73,6 +91,5 @@ function getMenu(arr_buttons) {
   };
 }
 
-function getChatId(msg) {
-  return msg.hasOwnProperty('chat') ? msg.chat.id : msg.from.id;
-}
+
+*/
