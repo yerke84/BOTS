@@ -108,3 +108,14 @@ function createCinemaListInlineKeyboardMarkup (cinemas) {
        bot.sendMessage(chatId, 'Contact was got.');
      });
      */
+     
+      // bot.on('message', (msg) => {
+//   bot.sendMessage(getChatId(msg), 'Other : ' + JSON.stringify(msg));
+// });
+
+// функции
+//
+
+bot.on('chosen_inline_result', function (msg) {
+	  console.log(msg);
+});

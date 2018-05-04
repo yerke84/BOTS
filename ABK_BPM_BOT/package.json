@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "nconf": "^0.10.0",
-    "node-telegram-bot-api": "^0.30.0"
+    "node-telegram-bot-api": "^0.30.0",
+    "string-format": "^1.0.0"
   }
 }
