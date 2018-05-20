@@ -1,0 +1,21 @@
+{
+  "name": "abk_om_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev_home": "NODE_ENV=HOME nodemon index.js",
+    "dev_mac": "NODE_ENV=MAC nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nconf": "^0.10.0",
+    "string-format": "^2.0.0",
+    "telegraf": "^3.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}

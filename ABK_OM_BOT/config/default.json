@@ -1,0 +1,45 @@
+{
+  "hello" : "Здравствуйте",
+  "main_menu_txt" : "Выберите пункт меню:",
+  "developing" : "Данный раздел в разработке.",
+  "alfa_site_url" : "https://www.alfabank.kz/",
+  "alfa_site_txt" : "Альфа-Банк",
+  "proxy" : "http://localhost:8081/",
+  "telegram_id" : "Ваш TELEGRAM ID = <b>{}</b>.\nДля того чтоб получить доступ к СЭД, необходимо отправить Ваш TELEGRAM ID и «юшку» по данному адресу <b>SD_BPM@ALFABANK.KZ</b> с темой «<b>TELEGRAM ID</b>».",
+  "active_tasks_list" : "<b>Список активных задач:</b>\n",
+  "closed_tasks_list" : "<b>Список завершенных задач:</b>\n",
+  "parse_error" : "Произошла ошибка, попробуйте позже.",
+  "open_task" : "/open_task_",
+  "tunnel" : "https://abkom.localtunnel.me",
+  "path" : "/secret-path",
+  "port" : 1984,
+
+  "alfa_site_url_buttons" : [
+    { "text": "Альфа-Банк", "url": "https://www.alfabank.kz/" },
+    { "text": "Назад",  "callback_data": "to_main_menu" }
+  ],
+
+  "main_menu_buttons" : [
+    { "text": "Мои активные задачи",       "callback_data": "to_my_active_tasks_list"},
+    { "text": "Мои завершенные задачи",    "callback_data": "to_my_closed_tasks_list" },
+    { "text": "Поиск заявки по номеру",  "callback_data": "to_find_process_by_instanse_id" }
+  ],
+
+  "active_tasks_navigate_buttons" : [
+    { "text": "Назад", "callback_data": "my_active_tasks_back"},
+    { "text": "Вперед", "callback_data": "my_active_tasks_forward"}
+  ],
+
+  "closed_tasks_navigate_buttons": [
+    { "text": "Назад", "callback_data": "my_closed_tasks_back"},
+    { "text": "Вперед", "callback_data": "my_closed_tasks_forward"}
+  ],
+
+  "search_menu_buttons" : [
+    { "text": "Поиск",       "callback_data": "find_process_by_instanse_id","switch_inline_query_current_chat" : "Введите номер заявки:" },
+    { "text": "Назад",  "callback_data": "to_main_menu" }
+  ],
+
+  "help_text" : "Список доступных команд:\n/start – начать работу с ботом,\n/menu – основной меню,\n/help – помощь."
+
+}
