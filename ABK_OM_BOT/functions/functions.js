@@ -28,6 +28,11 @@ exports.getClosedTasks = function (index) {
   return getTasks(false, index);
 }
 
+exports.findProcessTasksByInstanseId = function (ctx, instanseId) {
+  return ctx.reply('Searching ' + instanseId);
+  //return ctx.reply(config.get('enter_instance_id'), Extra.HTML());
+}
+
 function getTasks(isActive, index) {
   var ret;
   if(isActive) {

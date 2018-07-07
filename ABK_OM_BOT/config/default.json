@@ -14,6 +14,7 @@
   "path" : "/secret-path",
   "port" : 1984,
   "page" : " <i>(страница № {} из {})</i>\n\n",
+  "enter_instance_id" : "<b>Введите номер заявки:</b>",
 
   "alfa_site_url_buttons" : [
     { "text": "Альфа-Банк", "url": "https://www.alfabank.kz/" },

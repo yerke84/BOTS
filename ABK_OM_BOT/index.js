@@ -1,5 +1,6 @@
 //main includes
 const Telegraf = require('telegraf')
+const { Extra } = require('telegraf')
 const Router = require('telegraf/router')
 const session = require('telegraf/session')
 const express = require('express')
@@ -163,4 +164,23 @@ myRouter.on('my_closed_tasks_forward', (ctx) => {
   }
 })
 
+//to find process by instanse id
+myRouter.on('to_find_process_by_instanse_id', (ctx) => {
+  if(isRegistered) {
+    ctx.session.is_searching = true;
+    return ctx.reply(config.get('enter_instance_id'), Extra.HTML());
+  } else {
+    ctx.session.is_searching = false;
+    return functions.unRegisteredText(ctx, '')
+  }
+})
+
+bot.on('text', (ctx) => {
+  if(ctx.session.is_searching) {
+    ctx.session.is_searching = false;
+    return functions.findProcessTasksByInstanseId(ctx, ctx.message.text);
+  }
+})
+
+//
 bot.on('callback_query', myRouter)
