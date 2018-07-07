@@ -5,14 +5,15 @@
   "alfa_site_url" : "https://www.alfabank.kz/",
   "alfa_site_txt" : "Альфа-Банк",
   "proxy" : "http://localhost:8081/",
-  "telegram_id" : "Ваш TELEGRAM ID = <b>{}</b>.\nДля того чтоб получить доступ к СЭД, необходимо отправить Ваш TELEGRAM ID и «юшку» по данному адресу <b>SD_BPM@ALFABANK.KZ</b> с темой «<b>TELEGRAM ID</b>».",
-  "active_tasks_list" : "<b>Список активных задач:</b>\n",
-  "closed_tasks_list" : "<b>Список завершенных задач:</b>\n",
+  "telegram_id" : "Ваш TELEGRAM ID = <b>{}</b>.\nДля того чтоб получить доступ к СЭД, необходимо отправить Ваш TELEGRAM ID и «юшку» по данному адресу <b>SD_BPM@ALFABANK.KZ</b> с темой «<b>Регистрация TELEGRAM ID</b>».",
+  "active_tasks_list" : "<b>Список активных задач:</b>",
+  "closed_tasks_list" : "<b>Список завершенных задач:</b>",
   "parse_error" : "Произошла ошибка, попробуйте позже.",
   "open_task" : "/open_task_",
   "tunnel" : "https://abkom.localtunnel.me",
   "path" : "/secret-path",
   "port" : 1984,
+  "page" : " <i>(страница № {} из {})</i>\n\n",
 
   "alfa_site_url_buttons" : [
     { "text": "Альфа-Банк", "url": "https://www.alfabank.kz/" },

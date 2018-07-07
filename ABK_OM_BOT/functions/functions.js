@@ -1,3 +1,5 @@
+const format = require('string-format')
+const { Extra } = require('telegraf');
 const active_tasks_sample = require('../debug/active_tasks_sample')
 const closed_tasks_sample = require('../debug/closed_tasks_sample')
 
@@ -19,17 +21,33 @@ exports.editMessageText = function (ctx, txt, buttons) {
 }
 
 exports.getActiveTasks = function (index) {
-  console.log('A ' + index)
-  return parser(active_tasks_sample, 0x1F4D7)
+  return getTasks(true, index);
 }
 
 exports.getClosedTasks = function (index) {
-  console.log('C ' + index)
-  return parser(closed_tasks_sample, 0x1F4D8)
+  return getTasks(false, index);
 }
 
-function parser(json, icon) {
-  var ss = '';
+function getTasks(isActive, index) {
+  var ret;
+  if(isActive) {
+    ret = {
+      value : active_tasks_sample,
+      all : 15,
+      icon : 0x1F4D7
+    }
+  } else {
+    ret = {
+      value : closed_tasks_sample,
+      all : 11,
+      icon : 0x1F4D8
+    }
+  }
+  return parser(ret.value, ret.icon, index, ret.all);
+}
+
+function parser(json, icon, index, all) {
+  var ss = format(config.get("page"), index, all);
   if(json.RETCODE > -1) {
     const arr = json.RESPONSE;
     const n = arr.length;

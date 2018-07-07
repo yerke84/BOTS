@@ -102,7 +102,7 @@ myRouter.on('to_my_active_tasks_list', (ctx) => {
   if(isRegistered) {
     ctx.session.active_tasks_list = 1;
     const body = functions.getActiveTasks(ctx.session.active_tasks_list);
-    return functions.reply(ctx, config.get('active_tasks_list') + '\n' + body, active_tasks_navigate_buttons)
+    return functions.reply(ctx, config.get('active_tasks_list') + body, active_tasks_navigate_buttons)
   } else {
     return functions.unRegisteredText(ctx, '')
   }
@@ -113,7 +113,7 @@ myRouter.on('my_active_tasks_back', (ctx) => {
     ctx.session.active_tasks_list--;
     if(!ctx.session.active_tasks_list){ctx.session.active_tasks_list = 1}
     const body = functions.getActiveTasks(ctx.session.active_tasks_list);
-    return functions.editMessageText(ctx, config.get('active_tasks_list') + '\n' + body, active_tasks_navigate_buttons)
+    return functions.editMessageText(ctx, config.get('active_tasks_list') + body, active_tasks_navigate_buttons)
   } else {
     return functions.unRegisteredText(ctx, '')
   }
@@ -124,7 +124,7 @@ myRouter.on('my_active_tasks_forward', (ctx) => {
     ctx.session.active_tasks_list++;
     if(!ctx.session.active_tasks_list){ctx.session.active_tasks_list = 1}
     const body = functions.getActiveTasks(ctx.session.active_tasks_list);
-    return functions.editMessageText(ctx, config.get('active_tasks_list') + '\n' + body, active_tasks_navigate_buttons)
+    return functions.editMessageText(ctx, config.get('active_tasks_list') + body, active_tasks_navigate_buttons)
   } else {
     return functions.unRegisteredText(ctx, '')
   }
@@ -135,7 +135,7 @@ myRouter.on('to_my_closed_tasks_list', (ctx) => {
   if(isRegistered) {
     ctx.session.closed_tasks_list = 1;
     const body = functions.getClosedTasks(ctx.session.closed_tasks_list);
-    return functions.reply(ctx, config.get('closed_tasks_list') + '\n' + body, closed_tasks_navigate_buttons)
+    return functions.reply(ctx, config.get('closed_tasks_list') + body, closed_tasks_navigate_buttons)
   } else {
     return functions.unRegisteredText(ctx, '')
   }
@@ -146,7 +146,7 @@ myRouter.on('my_closed_tasks_back', (ctx) => {
     ctx.session.closed_tasks_list--;
     if(!ctx.session.closed_tasks_list){ctx.session.closed_tasks_list = 1}
     const body = functions.getClosedTasks(ctx.session.closed_tasks_list);
-    return functions.editMessageText(ctx, config.get('closed_tasks_list') + '\n' + body, closed_tasks_navigate_buttons)
+    return functions.editMessageText(ctx, config.get('closed_tasks_list') + body, closed_tasks_navigate_buttons)
   } else {
     return functions.unRegisteredText(ctx, '')
   }
@@ -157,7 +157,7 @@ myRouter.on('my_closed_tasks_forward', (ctx) => {
     ctx.session.closed_tasks_list++;
     if(!ctx.session.closed_tasks_list){ctx.session.closed_tasks_list = 1}
     const body = functions.getClosedTasks(ctx.session.closed_tasks_list);
-    return functions.editMessageText(ctx, config.get('closed_tasks_list') + '\n' + body, closed_tasks_navigate_buttons)
+    return functions.editMessageText(ctx, config.get('closed_tasks_list') + body, closed_tasks_navigate_buttons)
   } else {
     return functions.unRegisteredText(ctx, '')
   }
