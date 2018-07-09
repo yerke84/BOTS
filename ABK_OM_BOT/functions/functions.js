@@ -1,7 +1,6 @@
 const format = require('string-format')
 const { Extra } = require('telegraf');
-const active_tasks_sample = require('../debug/active_tasks_sample')
-const closed_tasks_sample = require('../debug/closed_tasks_sample')
+const V_TELEGRAM_TASKS = require('../debug/V_TELEGRAM_TASKS')
 
 const config = require('nconf')
 config.file('def', {file: './config/default.json'})
@@ -34,31 +33,19 @@ exports.findProcessTasksByInstanseId = function (ctx, instanseId) {
 }
 
 function getTasks(isActive, index) {
-  var ret;
-  if(isActive) {
-    ret = {
-      value : active_tasks_sample,
-      all : 15,
-      icon : 0x1F4D7
-    }
-  } else {
-    ret = {
-      value : closed_tasks_sample,
-      all : 11,
-      icon : 0x1F4D8
-    }
-  }
-  return parser(ret.value, ret.icon, index, ret.all);
-}
 
-function parser(json, icon, index, all) {
+  const json = V_TELEGRAM_TASKS;
+  const arr = json.RESPONSE;
+  const all = arr.length;
+  const icon = isActive ? 0x1F4D7 : 0x1F4D8;
+  const start = (index * 3) - 3;
+  const end = (index * 3) - 1;
+
   var ss = format(config.get("page"), index, all);
   if(json.RETCODE > -1) {
-    const arr = json.RESPONSE;
-    const n = arr.length;
-    for(var i = 0; i < n; i++) {
+    for(var i = start; i < end + 1; i++) {
       ss = ss + String.fromCodePoint(icon) + ' ' + arr[i].SUBJECT + '\n' + config.get("open_task") + arr[i].TASK_ID;
-      if(i < (n -1)){ss = ss + '\n\n'}
+      if(i < (end)) {ss = ss + '\n\n'}
     }
     return ss;
   } else {
