@@ -2,3 +2,4 @@ node_modules
 token.json
 server.crt
 server.key
+certs
