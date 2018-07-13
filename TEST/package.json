@@ -5,19 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev_home": "NODE_ENV=HOME nodemon index.js",
-    "dev_mac": "NODE_ENV=MAC nodemon index.js",
-    "test_vhost": "NODE_ENV=MAC nodemon testVHost.js"
+    "dev_mac": "NODE_ENV=MAC nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bouncy": "^3.2.2",
-    "connect": "^3.6.6",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
     "http": "0.0.0",
-    "https": "^1.0.0",
-    "vhost": "^3.0.2"
+    "https": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.17.4"
