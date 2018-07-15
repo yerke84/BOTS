@@ -1,0 +1,14 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=KZ
+ST=ALM
+L=ALMATY
+O=ALFABANK
+OU=IT
+emailAddress=yerke1984@gmail.com
+CN=tlgrmalfabank.kz
