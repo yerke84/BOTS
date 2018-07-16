@@ -24,7 +24,7 @@ var certOptions = {
 //Start server
 var https = require('https')
 var httpsServer = https.createServer(certOptions, app);
-var port = config.get("port"); //443, 80, 88, 8443
+var port = config.get("myport"); //443, 80, 88, 8443
 httpsServer.listen(port, function() {
     console.log('Express server listening on port %d in %s mode.', port, app.settings.env);
 });
