@@ -25,10 +25,10 @@ const closed_tasks_navigate_buttons = buttons.closed_tasks_navigate_buttons();
 //starting
 const TOKEN = config.get('token')
 const bot = new Telegraf(TOKEN)
-//bot.use(Telegraf.log())
+bot.use(Telegraf.log())
 bot.telegram.setWebhook(config.get("tunnel") + config.get('path'))
 const app = express()
-app.get('/', (req, res) => res.send('Hello World !!!'))
+app.get('/', (req, res) => res.send('Hello World !!!<br>\n' + new Date() + '<br>\n'))
 app.use(bot.webhookCallback(config.get('path')))
 const port = config.get('port')
 app.listen(port, () => {
