@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "matiz" : "node auto_Daewoo.js",
-    "notmatiz" : "node auto_notDaewoo.js"
+    "matiz": "node auto_Daewoo.js",
+    "notmatiz": "node auto_notDaewoo.js"
   },
   "author": "",
   "license": "ISC",
