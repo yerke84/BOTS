@@ -1,0 +1,20 @@
+{
+  "name": "kolesa.kz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "matiz" : "node auto_Daewoo.js",
+    "notmatiz" : "node auto_notDaewoo.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "delay": "^4.0.1",
+    "fs": "0.0.1-security",
+    "numeral": "^2.0.6",
+    "request": "^2.88.0"
+  }
+}
