@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const searcher = require("./searcher.js")
 const router = express.Router()
-const port = 3000
+const port = 3000;
 
 var mainExcludeBrands = ['ГАЗ', 'Dong Feng'];
 
